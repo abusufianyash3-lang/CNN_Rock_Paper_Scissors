@@ -1,0 +1,40 @@
+CNN ROCK PAPER SCISSORS — WINDOWS QUICK START
+================================================
+
+This is a playable webcam game. It uses a small CNN trained on your own real webcam images.
+You need Python 3.10 or 3.11 recommended, a webcam, and an internet connection for installation.
+
+1) Extract this ZIP into a folder.
+2) Open Command Prompt in that folder.
+3) Create a virtual environment (recommended):
+   py -3.11 -m venv .venv
+   .venv\Scripts\activate
+
+4) Install packages:
+   python -m pip install --upgrade pip
+   pip install tensorflow opencv-python pygame numpy
+
+5) Collect your own images:
+   python collect_data.py
+   Hold your hand in the center green square.
+   Press R when showing Rock, P for Paper, S for Scissors.
+   Collect 100-200 or more images for EACH class. Vary lighting, distance, and hand position.
+   Press Q to quit.
+   Images are saved into dataset/rock, dataset/paper, dataset/scissors.
+
+6) Train the CNN:
+   python train_model.py
+   Training creates rps_cnn.keras.
+
+7) Play:
+   python game.py
+   Show one gesture inside the green square and press SPACE to play a round.
+   Press ESC to exit.
+
+IMPORTANT
+- The model is not included because it must be trained on your collected images.
+- CNN accuracy depends on the quality and variety of your own collected images.
+- Keep the same webcam, crop area, and general lighting while collecting and playing.
+- If the camera cannot open, close Zoom/Teams/Camera and try again.
+- TensorFlow installation support depends on your Python version and system. Python 3.10/3.11 on 64-bit Windows is a practical starting point.
+- This is a starter project. It may need tuning if your hand/background changes significantly.
